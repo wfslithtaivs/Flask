@@ -38,7 +38,7 @@ def success():
     return render_template("application-response.html",
                            firstname = response.get("firstname").capitalize(),
                            lastname = response.get("lastname").capitalize(),
-                           salary = "${:,}".format(float(response.get("salary"))),
+                           salary = "${:,.2f}".format(float(response.get("salary"))),
                            job = response.get("job")
                            )
 
