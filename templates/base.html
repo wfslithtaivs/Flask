@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>{% block title %}TITLE GOES HERE{% endblock %}</title>
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+         <link href="static/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}BODY CONTENT GOES HERE{% endblock %}
+            <div class="col">
+                <footer>Copyright 2017 Ubermelon</footer>
+            </div>
+        </div>
+    </body>
+</html>

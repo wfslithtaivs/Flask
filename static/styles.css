@@ -1,0 +1,12 @@
+/* Your CSS goes here */
+
+input, .form-control {
+    background-color: yellow;
+}
+
+.bg-info {
+    box-shadow: 4px 5px lightblue;
+    text-align: left;
+    padding: 5px;
+    border-style: outset;
+}

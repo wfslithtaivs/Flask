@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %} Application Form {% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Ubermelon Job Application</h1>
+        <h3>Welcome to Ubermelon application process</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 centered-text">
+            <p class="bg-info">Please, fill out following fields to start our wonderful journey in the world Programmable Melon World:</p>
+        </div>
+        <div class="col-xs-6">
+              <blockquote>
+                    <p> "We know what we are but know not what we may be."</p>
+                    <footer>Hamlet</footer>
+                </blockquote>
+        </div>
+    </div>
+    <hr>
+    <form action="application-success", method="post">
+        <div class="form-group">
+          <label>First name
+            <input type="text"
+                   class="form-control"
+                   name="firstname"
+                   placeholder="Enter your name">
+          </label>
+         <label>Last name
+            <input type="text"
+                   class = "form-control"
+                    name="lastname"
+                    placeholder="Enter your last name">
+        </label>
+        </div>
+         <div class="form-group">
+             <label>Please, provide your salary expectations:
+                 <input type="number"
+                        class="form-control"
+                        name="salary"
+                        placeholder="Type or select number"
+                        value="45000">
+             </label>
+         </div>
+        <div class="form-group">
+            <label> Please, select what job you are applying for
+                <select class="form-control" name="job">
+                 <option disabled selected>---Choose position---</option>
+                    {% for job in jobs%}
+                        <option value="{{ jobs[job] }}">{{jobs[job]}}</option>
+                    {%endfor%}
+                </select>
+            </label>
+        </div>
+
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </form>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <p><span class="text-info">If you have any questions, please, contact our Chief Baloonicorn of Magic Valley Administration via e-mail: <mark>dontbotherme@thankyou.com</mark>.</span></p>
+        </div>
+        <div class="col-xs-6"></div>
+    </div>
+{% endblock %}
