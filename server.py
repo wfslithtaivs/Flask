@@ -35,10 +35,14 @@ def success():
 
     response = request.form
 
+    import locale
+    locale.setlocale(locale.LC_ALL, '')
+    salary = locale.currency(float(response.get("salary")), grouping=True)
+
     return render_template("application-response.html",
                            firstname = response.get("firstname").capitalize(),
                            lastname = response.get("lastname").capitalize(),
-                           salary = "${:,.2f}".format(float(response.get("salary"))),
+                           salary = salary,
                            job = response.get("job")
                            )
 
